@@ -9,6 +9,7 @@ import Checkout from "./components/Checkout";
 import Default from "./components/Default";
 import Modal from "./components/Modal";
 import Orderplaced from "./components/OrderPlaced";
+import Footer from "./components/Footer";
 
 class App extends Component {
   render() {
@@ -20,9 +21,11 @@ class App extends Component {
           <Route path="/details" component={Details}></Route>
           <Route path="/checkout" component={Checkout}></Route>
           <Route path="/order" component={Orderplaced}></Route>
+
           <Route component={Default}></Route>
         </Switch>
         <Modal />
+        <Footer />
       </React.Fragment>
     );
   }

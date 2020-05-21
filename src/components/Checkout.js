@@ -12,7 +12,7 @@ export default class Checkout extends Component {
           <div className="subnav-wrapper">
             <ul className="sub-navbar">
               <li>
-                <NavLink to="/">1. Shopping Cart</NavLink>
+                <NavLink to="/checkout">1. Shopping Cart</NavLink>
               </li>
               <li>
                 <NavLink to="/ship">2. Shipping Details</NavLink>
@@ -24,7 +24,7 @@ export default class Checkout extends Component {
           </div>
 
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/checkout">
               <Cart />
             </Route>
             <Route exact path="/ship">

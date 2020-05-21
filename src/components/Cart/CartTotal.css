@@ -4,6 +4,9 @@
   margin-right: 1rem;
   width: 30%;
 }
+.wrapper {
+  width: 75%;
+}
 .summary h4 {
   padding-bottom: 1rem;
 }

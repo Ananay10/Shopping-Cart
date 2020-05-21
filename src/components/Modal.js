@@ -82,7 +82,7 @@ const ModalContainer = styled.div`
   .btn-blue {
     color: white;
     background: rgb(30, 81, 192);
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
     &:hover {
       color: rgb(30, 81, 192);
       background: white;

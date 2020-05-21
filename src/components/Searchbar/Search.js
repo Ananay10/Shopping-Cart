@@ -12,33 +12,6 @@ class SearchBar extends React.Component {
     this.state = { data: data };
   }
 
-  // console.log(prod);
-  componentDidMount() {
-    fetch(`../../data`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-
-      .then((data) => {
-        console.log(data);
-        data = data.map(function (e, idx) {
-          return {
-            title: e["title"],
-            price: e["price"],
-            info: e["info"],
-            image: e["img"],
-          };
-        });
-
-        this.setState({ data: data });
-      });
-  }
-
   filter = () => {
     let filter_txt = document.getElementById("search-box").value.toUpperCase();
     let blocks = document.getElementsByClassName("product-block");

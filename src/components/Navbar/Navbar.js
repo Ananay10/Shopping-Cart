@@ -1,12 +1,31 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-
+import "../../data";
+// import Product from "../Product/Product";
 export default class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: [],
+      cart: [],
+    };
+  }
+
+  changeQty = (id) => {
+    let tempCart = [...this.state.cart];
+    const selectedProduct = tempCart.find((item) => item.id === id);
+    const index = tempCart.indexOf(selectedProduct);
+    const product = tempCart[index];
+    product.count += 1;
+    this.setState(() => {
+      return { cart: [...tempCart] };
+    });
+  };
   render() {
     return (
       <nav>
-        <div class="logo">
+        <div className="logo">
           <i class="fas fa-mobile-alt fa-4x"></i>
         </div>
         <ul className="navbar">
@@ -19,7 +38,7 @@ export default class Navbar extends Component {
           <Link to="/checkout">
             <button className="nav-btn">
               <i className="fas fa-cart-plus" />
-              My Cart
+              My Cart: <span>{this.state.cart.length}</span>
             </button>
           </Link>
         </ul>
